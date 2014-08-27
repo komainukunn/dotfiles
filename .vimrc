@@ -1,5 +1,9 @@
+msyVimrc
+
+" SECTION: set {{{1
+"============================================================
+
 "新しい行のインデントを現在行と同じにする
-"
 set autoindent
 "バックアップファイルを作るディレクトリ
 set backupdir=$HOME/vimbackup
@@ -65,6 +69,11 @@ set scrolloff=8                " 上下8行の視界を確保
 set sidescrolloff=16           " 左右スクロール時の視界を確保
 set sidescroll=1               " 左右スクロールは一文字づつ行う
 
+"変な.unファイルを作成させない"
+:set noundofile
+
+"
+" SECTION: Neobundle {{{2
 
 let g:neobundle_default_git_protocol='git'
 
@@ -88,7 +97,7 @@ NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/emmet-vim'
-"NeoBundle 'taichouchou2/surround.vim'
+NeoBundle 'tpope/vim-surround'
 "/Users/masaya/.vim/bundle/surround.vim
 "Cloning into '/Users/masaya/.vim/bundle/surround.vim'...
 "fatal: could not read Username for 'https://github.com': Device not configured
@@ -97,7 +106,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
-"NeoBundle 'taichouchou2/vim-javascript'
+NeoBundle 'pangloss/vim-javascript'
 "Error
 "/Users/masaya/.vim/bundle/vim-javascript
 "Cloning into '/Users/masaya/.vim/bundle/vim-javascript'...
@@ -114,9 +123,15 @@ filetype indent on
 syntax on
 
 
+"
+" SECTION: NERDTREE {{{2
+
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
- 
+
+"
+" SECTION: key & defalut {{{2
+
 " デフォルトでプラグインを表示させる"
 autocmd VimEnter * execute 'vs'
 autocmd VimEnter * execute 'VimShell'
@@ -125,9 +140,9 @@ autocmd VimEnter * execute 'NERDTree'
 
 nmap <C-s> :only<CR>:vs<CR>:VimShell<CR><Esc>:sp Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 
-"変な.unファイルを作成させない"
-:set noundofile
 
+"
+" SECTION: neocomplcache {{{1
 
 "neocomplcacheの補完"
 
