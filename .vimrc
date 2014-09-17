@@ -1,4 +1,4 @@
-msyVimrc
+
 
 " SECTION: set {{{1
 "============================================================
@@ -55,6 +55,9 @@ au BufNewFile,BufRead * set iminsert=0
 au BufNewFile,BufRead * set tabstop=4 shiftwidth=4
 "バックアップファイル自動作成の停止
 set nobackup
+" カーソルを行頭、行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+
 
 "スワップファイルを作成しない
 "「無名のスワップファイルを開けないのでリカバリは不可能です」が表示された時の回避
@@ -71,6 +74,17 @@ set sidescroll=1               " 左右スクロールは一文字づつ行う
 
 "変な.unファイルを作成させない"
 :set noundofile
+
+
+" vi 互換をオフにする
+" これ自体は前から設定はしていた
+set nocompatible
+" コマンドモードでの補完設定
+set wildmode=longest:full,list
+
+
+
+
 
 "
 " SECTION: Neobundle {{{2
@@ -113,6 +127,10 @@ NeoBundle 'pangloss/vim-javascript'
 "fatal: could not read Username for 'https://github.com': Device not configured
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'vim-scripts/JavaScript-Indent'
+NeoBundle 'heavenshell/vim-jsdoc'
+NeoBundle 'w0ng/vim-hybrid'
+
 
 "http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 
@@ -243,5 +261,15 @@ nmap <C-s> :only<CR>:vs<CR>:VimShell<CR><Esc>:sp Dropbox/komac/vim/vimhelper<CR>
 	let g:neocomplcache_omni_patterns.perl =
 	\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
+
+autocmd FileType javascript,coffee setlocal omnifunc=javascriptcomplete#CompleteJS
+
+let g:neocomplcache_source_rank = {
+  \ 'jscomplete' : 500,
+  \ }
+
+" dom も含める
+let g:jscomplete_use = ['dom']
+    
 "ここまで"
 

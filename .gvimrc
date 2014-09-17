@@ -22,7 +22,9 @@ set showtabline=2
 set transparency=3
 map  gw :macaction selectNextWindow:
 map  gW :macaction selectPreviousWindow:
-colorscheme desert
+"colorscheme desert
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 " 縦幅　デフォルトは24
 set lines=60
