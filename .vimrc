@@ -1,5 +1,6 @@
 
 
+
 " SECTION: set {{{1
 "============================================================
 
@@ -130,6 +131,8 @@ NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'vim-scripts/JavaScript-Indent'
 NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'felixge/vim-nodejs-errorformat'
 
 
 "http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
@@ -151,13 +154,15 @@ let NERDTreeShowHidden = 1
 " SECTION: key & defalut {{{2
 
 " デフォルトでプラグインを表示させる"
-autocmd VimEnter * execute 'vs'
-autocmd VimEnter * execute 'VimShell'
-autocmd VimEnter * execute 'sp Dropbox/komac/vim/vimhelper'
+autocmd VimEnter * execute 'vs new'
+autocmd VimEnter * execute 'QuickRun ruby'
+autocmd VimEnter * execute 'e Dropbox/komac/vim/vimhelper'
 autocmd VimEnter * execute 'NERDTree'
 
-nmap <C-s> :only<CR>:vs<CR>:VimShell<CR><Esc>:sp Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
-
+nmap <C-s>s :only<CR>:vs new<CR>:QuickRun ruby<CR>:e Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
+nmap <C-s>z :only<CR>:vs new<CR>:QuickRun ruby<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
+nmap <C-s>r :QuickRun ruby<CR>
+nmap <C-s>j :QuickRun javascript<CR>
 
 "
 " SECTION: neocomplcache {{{1
@@ -273,3 +278,13 @@ let g:jscomplete_use = ['dom']
     
 "ここまで"
 
+"QuickRunのコンソールをnodeに変更"
+let $JS_CMD='node'
+
+"syntastic_
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['ruby', 'javascript'],
+                           \ 'passive_filetypes': [] }
+
+"JSLint
+"let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"

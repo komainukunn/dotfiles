@@ -36,3 +36,7 @@ if has("gui_running")
   au GUIEnter * set fullscreen
 endif
 
+"背景透過
+" .gvimrc
+set transparency=0 "initialize
+nnoremap <expr><F12> &transparency+40 >= 100 ? ":set transparency=0\<CR>" : ":let &transparency=&transparency+40\<CR>"
