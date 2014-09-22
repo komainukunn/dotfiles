@@ -59,6 +59,12 @@ set nobackup
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
+"文字コードの設定
+:set encoding=utf-8
+:set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+
+"改行コードの自動認識
+:set fileformats=unix,dos,mac
 
 "スワップファイルを作成しない
 "「無名のスワップファイルを開けないのでリカバリは不可能です」が表示された時の回避
