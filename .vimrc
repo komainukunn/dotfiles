@@ -176,7 +176,7 @@ let NERDTreeShowHidden = 1
 "autocmd VimEnter * execute 'e /Users/masaya/Dropbox/komac/vim/vimhelper'
 autocmd VimEnter * execute 'NERDTree'
 
-nmap <Space>x :only<CR>:vs new<CR>:QuickRun ruby<CR>:e /Users/masaya/Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
+nmap <Space>x :only<CR>:vs new<CR>:QuickRun ruby<CR>:e $HOME/Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 nmap <Space>z :only<CR>:vs new<CR>:QuickRun ruby<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 nmap <Space>s :only<CR>:NERDTree<CR><C-w>w
 
