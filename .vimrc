@@ -136,6 +136,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'Shougo/neosnippet-snippets'
 "/Users/masaya/.vim/bundle/surround.vim
 "Cloning into '/Users/masaya/.vim/bundle/surround.vim'...
 "fatal: could not read Username for 'https://github.com': Device not configured
