@@ -7,5 +7,5 @@ PATH=$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/local/bin:/opt/
 
 export NODE_PATH=$HOME/node_modules
 
-昔のpath 
+#昔のpath 
 #/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
