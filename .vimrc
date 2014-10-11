@@ -119,10 +119,15 @@ set nocompatible               " be iMproved
 filetype plugin indent off
 
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
-endif
+""if has('vim_starting')
+""call neobundle#rc(expand('~/.vim/bundle/'))
+""endif
+"昔の初期化のやつ
+
+set runtimepath+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
@@ -137,19 +142,12 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Shougo/neosnippet-snippets'
-"/Users/masaya/.vim/bundle/surround.vim
-"Cloning into '/Users/masaya/.vim/bundle/surround.vim'...
-"fatal: could not read Username for 'https://github.com': Device not configured
 NeoBundle 'open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
-"Error
-"/Users/masaya/.vim/bundle/vim-javascript
-"Cloning into '/Users/masaya/.vim/bundle/vim-javascript'...
-"fatal: could not read Username for 'https://github.com': Device not configured
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'vim-scripts/JavaScript-Indent'
@@ -157,8 +155,11 @@ NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'felixge/vim-nodejs-errorformat'
+NeoBundle 'mattn/jscomplete-vim'
+NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'Yggdroot/indentLine'
 
-
+call neobundle#end()
 "http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 
 ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
@@ -187,12 +188,13 @@ nmap <Space>x :only<CR>:vs new<CR>:QuickRun ruby<CR>:e $HOME/Dropbox/komac/vim/v
 nmap <Space>z :only<CR>:vs new<CR>:QuickRun ruby<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 nmap <Space>s :only<CR>:NERDTree<CR><C-w>w
 
-nmap <Space>r :QuickRun ruby<CR>
-nmap <Space>j :QuickRun javascript<CR>
+nmap <Space>r :QuickRun ruby
+nmap <Space>c :QuickRun c
+nmap <Space>j :QuickRun javascript
 
-vmap <Space>r :QuickRun ruby<CR>
-vmap <Space>j :QuickRun javascript<CR>
-
+vmap <Space>r :QuickRun ruby
+vmap <Space>j :QuickRun javascript
+vmap <Space>r :QuickRun c
 "
 " SECTION: neocomplcache {{{1
 
@@ -317,3 +319,22 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 
 "JSLint
 "let g:syntastic_javascript_jslint_conf = "--white --undef --nomen --regexp --plusplus --bitwise --newcap --sloppy --vars"
+
+"js node 補完
+autocmd FileType javascript
+  \ :setl omnifunc=jscomplete#CompleteJS
+
+:let g:jscomplete_use = ['dom', 'moz']
+" => autoload/js/dom.vim と autoload/js/moz.vim が読まれる
+
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+      let g:neocomplcache_omni_functions = {}
+  endif
+  let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+
+  let g:node_usejscomplete = 1
+
+
+" indentLineの設定
+set list listchars=tab:\¦\
