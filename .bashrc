@@ -9,3 +9,6 @@ export NODE_PATH=$HOME/node_modules
 
 #昔のpath 
 #/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+#chromeをterminalから起動
+alias chrome="open /Applications/Google\ Chrome.app"

@@ -84,7 +84,7 @@ set sidescroll=1               " 左右スクロールは一文字づつ行う
 
 
 " vi 互換をオフにする
-" これ自体は前から設定はしていた
+" これ自体aは前から設定はしていた
 set nocompatible
 " コマンドモードでの補完設定
 set wildmode=longest:full,list
@@ -124,39 +124,47 @@ filetype plugin indent off
 ""endif
 "昔の初期化のやつ
 
+
+if has('mac')
+  " let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+  let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/vimproc_mac.so'
+endif
+
 set runtimepath+=~/.vim/bundle/neobundle.vim
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " originalrepos on github
+
+NeoBundle 'felixge/vim-nodejs-errorformat'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'heavenshell/vim-jsdoc'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/jscomplete-vim'
+NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'open-browser.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'VimClojure'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'open-browser.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'tell-k/vim-browsereload-mac'
-NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'vim-scripts/JavaScript-Indent'
-NeoBundle 'heavenshell/vim-jsdoc'
-NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'felixge/vim-nodejs-errorformat'
-NeoBundle 'mattn/jscomplete-vim'
-NeoBundle 'myhere/vim-nodejs-complete'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'VimClojure'
+NeoBundle 'vim-scripts/JavaScript-Indent'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Yggdroot/indentLine'
 
 call neobundle#end()
@@ -184,6 +192,8 @@ let NERDTreeShowHidden = 1
 "autocmd VimEnter * execute 'e /Users/masaya/Dropbox/komac/vim/vimhelper'
 autocmd VimEnter * execute 'NERDTree'
 
+
+"キーマッピング"
 nmap <Space>x :only<CR>:vs new<CR>:QuickRun ruby<CR>:e $HOME/Dropbox/komac/vim/vimhelper<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 nmap <Space>z :only<CR>:vs new<CR>:QuickRun ruby<CR>:NERDTree<CR><C-w>w<C-w>w<C-w>w
 nmap <Space>s :only<CR>:NERDTree<CR><C-w>w
@@ -195,7 +205,12 @@ nmap <Space>j :QuickRun javascript
 vmap <Space>r :QuickRun ruby
 vmap <Space>j :QuickRun javascript
 vmap <Space>r :QuickRun c
-"
+
+"スニぺット
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+
 " SECTION: neocomplcache {{{1
 
 "neocomplcacheの補完"
@@ -338,3 +353,9 @@ if !exists('g:neocomplcache_omni_functions')
 
 " indentLineの設定
 set list listchars=tab:\¦\
+
+"スニペットファイル読み込み
+let s:my_snippet = '~/snippet/'
+let g:neosnippet#snippets_directory = s:my_snippet
+
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
