@@ -12,3 +12,19 @@ export NODE_PATH=$HOME/node_modules
 
 #chromeをterminalから起動
 alias chrome="open /Applications/Google\ Chrome.app"
+
+#lsに色を
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  ;;
+esac
+
+export LSCOLORS=gxfxcxdxbxegedabagacad
