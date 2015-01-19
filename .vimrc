@@ -70,7 +70,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 "「無名のスワップファイルを開けないのでリカバリは不可能です」が表示された時の回避
 set noswapfile
 :set encoding=utf-8
-:set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+:set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 :set fileformats=unix,dos,mac
 
 set backspace=indent,eol,start " Backspaceキーの影響範囲に制限を設けない
@@ -141,25 +141,21 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/jscomplete-vim'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'myhere/vim-nodejs-complete'
-NeoBundle 'open-browser.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'VimClojure'
@@ -202,6 +198,7 @@ nmap <Space>r :QuickRun ruby
 nmap <Space>c :QuickRun c
 nmap <Space>j :QuickRun javascript
 
+nmap <Space>t :set expandtab<CR>:retab<CR>
 vmap <Space>r :QuickRun ruby
 vmap <Space>j :QuickRun javascript
 vmap <Space>r :QuickRun c
