@@ -19,11 +19,11 @@ else
 endif
 
 
-if filereadable(expand('~/dotfiles/vimfiles/neocomplcache.vim'))
-  source ~/dotfiles/vimfiles/neocomplcache.vim
-else
-    :echohl WarningMsg | echo "don't load neocomplcache.vim" | echohl None
-endif
+" if filereadable(expand('~/dotfiles/vimfiles/neocomplcache.vim'))
+  " source ~/dotfiles/vimfiles/neocomplcache.vim
+" else
+    " :echohl WarningMsg | echo "don't load neocomplcache.vim" | echohl None
+" endif
 
 
 if filereadable(expand('~/dotfiles/vimfiles/jscomplete.vim'))
@@ -68,8 +68,13 @@ else
 endif
 
 if filereadable(expand('~/dotfiles/vimfiles/nerdcommente.vim'))
-  source ~/dotfiles/vimfiles/nerdtree.vim
+  source ~/dotfiles/vimfiles/nerdcommente.vim
 else
     :echohl WarningMsg | echo "don't load nerdcomment.vim" | echohl None
 endif
 
+if filereadable(expand('~/dotfiles/vimfiles/neocomplete.vim'))
+  source ~/dotfiles/vimfiles/neocomplete.vim
+else
+    :echohl WarningMsg | echo "don't load neocomplete.vim" | echohl None
+endif

@@ -75,7 +75,11 @@ NeoBundle 'Shougo/vimproc'
 "NeoBundle 'Shougo/unite.vim'
 
 " 補完強化
-NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neocomplcache'
+
+" 補完強化
+NeoBundle 'Shougo/neocomplete'
+
 
 " スニペットをつかうため
 NeoBundle 'Shougo/neosnippet'
