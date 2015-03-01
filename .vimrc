@@ -67,3 +67,9 @@ else
     :echohl WarningMsg | echo "don't load indentline.vim" | echohl None
 endif
 
+if filereadable(expand('~/dotfiles/vimfiles/nerdcommente.vim'))
+  source ~/dotfiles/vimfiles/nerdtree.vim
+else
+    :echohl WarningMsg | echo "don't load nerdcomment.vim" | echohl None
+endif
+

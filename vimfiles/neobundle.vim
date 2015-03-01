@@ -104,6 +104,9 @@ NeoBundle 'w0ng/vim-hybrid'
 "インデント可視化
 NeoBundle 'Yggdroot/indentLine'
 
+"コメントアウト用
+NeoBundle 'scrooloose/nerdcommenter'
+
 call neobundle#end()
 "http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 

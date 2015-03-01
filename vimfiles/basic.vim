@@ -35,9 +35,9 @@ set smarttab
 "検索をファイルの先頭へループしない
 set nowrapscan
 "縦幅
-set lines=50
+"set lines=50
 "横幅
-set columns=150
+"set columns=200
 "入力モード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
@@ -101,4 +101,5 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-
+"全角の記号が半角幅なのを解消
+set ambiwidth=double

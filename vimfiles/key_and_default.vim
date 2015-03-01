@@ -30,3 +30,18 @@ vmap <Space>r :QuickRun c
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
+"NERD Commenteによるコメントアウト
+"コメントアウト
+nmap <Space>// <Plug>NERDCommenterAlignLeft
+vmap <Space>/  <Plug>NERDCommenterComment
+nmap <Space>?  <Plug>NERDCommenterToEOL
+vmap <Space>?  <Plug>NERDCommenterAlignLeft
+"アンコメント
+nmap <Space>_  <Plug>NERDCommenterUncomment
+vmap <Space>_  <Plug>NERDCommenterUncomment
+"拡張コメント 謎
+nmap <Space>xm <Plug>NERDCommenterMinimal
+nmap <Space>xs <Plug>NERDCommenterSexy
+vmap <Space>xm <Plug>NERDCommenterMinimal
+vmap <Space>xs <Plug>NERDCommenterSexy
+nmap <Space>xa <Plug>NERDCommenterAltDelims
