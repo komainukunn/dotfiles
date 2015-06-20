@@ -1,2 +1,4 @@
 " indentLineの設定
-set list listchars=tab:\ \
+set list listchars=tab:\¦\
+
+
