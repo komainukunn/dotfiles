@@ -111,6 +111,9 @@ NeoBundle 'Yggdroot/indentLine'
 "コメントアウト用
 NeoBundle 'scrooloose/nerdcommenter'
 
+"react JSXのカラーリングやシンタックス"
+NeoBundle 'mxw/vim-jsx'
+
 call neobundle#end()
 "http://qiita.com/alpaca_taichou/items/056a4c42fe7a928973e6
 
