@@ -78,3 +78,9 @@ if filereadable(expand('~/dotfiles/vimfiles/neocomplete.vim'))
 else
     :echohl WarningMsg | echo "don't load neocomplete.vim" | echohl None
 endif
+
+if filereadable(expand('~/dotfiles/vimfiles/vim-processing.vim'))
+  source ~/dotfiles/vimfiles/vim-processing.vim
+else
+    :echohl WarningMsg | echo "don't load vim-processing.vim" | echohl None
+endif
