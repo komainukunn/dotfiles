@@ -13,7 +13,7 @@ filetype plugin indent off
 
 if has('mac')
   " let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
-  let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/vimproc_mac.so'
+  let g:vimproc_dll_path = $VIMRUNTIME . '~/.vim/bundle/vimproc/lib/vimproc_mac.so'
 endif
 
 
