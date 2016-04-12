@@ -1,4 +1,5 @@
-let g:neobundle_default_git_protocol='git'
+let g:neobundle#types#git#default_protocol='git'
+let g:neobundle#types#git#default_protocol = 'https'
 
 set nocompatible               " be iMproved
 filetype plugin indent off
