@@ -103,3 +103,6 @@ endif
 
 "全角の記号が半角幅なのを解消
 set ambiwidth=double
+
+"シンタックス(色つけ)有効
+syntax on
