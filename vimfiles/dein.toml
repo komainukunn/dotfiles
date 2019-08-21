@@ -236,7 +236,7 @@ hook_add = '''
    set list listchars=tab:\¦\
 '''
 
-# 空白文字 可視
+# コメント 設定
 [[plugins]]
 repo = 'scrooloose/nerdcommenter'
 # 設定
@@ -247,5 +247,20 @@ hook_add = '''
   
   "キーマッピングは別の場所に記載
 
+'''
+
+# 空白文字 可視
+[[plugins]]
+repo = 'scrooloose/syntastic'
+# 設定
+hook_add = '''
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 '''
 
