@@ -18,7 +18,7 @@ nmap <Space>t :set expandtab<CR>:retab<CR>
 nmap <Space>l :noh<CR>
 
 "スペルチェック切り替え
-nmap <Space>s :set spell!
+nmap <Space>s :set spell!<CR>
 
 "コンパイル
 " nmap <Space>r :QuickRun ruby
