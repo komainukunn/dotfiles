@@ -132,3 +132,7 @@ augroup spell_check
   autocmd!
   autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
 augroup END
+
+" スペルチェックのハイライトを下線部に変更
+hi clear SpellBad
+hi SpellBad cterm=underline
