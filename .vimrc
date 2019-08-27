@@ -1,7 +1,7 @@
 if filereadable(expand('~/dotfiles/vimfiles/dein_vim_setting.vim')) " ファイルが読み込み可能かチェック
   source ~/dotfiles/vimfiles/dein_vim_setting.vim
 else
-    :echohl WarningMsg | echo "don't load neobundle.vim" | echohl None
+    :echohl WarningMsg | echo "don't load dein_vim_setting.vim" | echohl None
 endif
 
 

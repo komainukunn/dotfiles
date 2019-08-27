@@ -17,14 +17,17 @@ nmap <Space>t :set expandtab<CR>:retab<CR>
 "検索ハイライトリセット
 nmap <Space>l :noh<CR>
 
-"コンパイル
-nmap <Space>r :QuickRun ruby
-nmap <Space>c :QuickRun c
-nmap <Space>j :QuickRun javascript
+"スペルチェック切り替え
+nmap <Space>s :set spell!
 
-vmap <Space>r :QuickRun ruby
-vmap <Space>j :QuickRun javascript
-vmap <Space>r :QuickRun c
+"コンパイル
+" nmap <Space>r :QuickRun ruby
+" nmap <Space>c :QuickRun c
+" nmap <Space>j :QuickRun javascript
+
+" vmap <Space>r :QuickRun ruby
+" vmap <Space>j :QuickRun javascript
+" vmap <Space>r :QuickRun c
 
 "スニぺット
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
