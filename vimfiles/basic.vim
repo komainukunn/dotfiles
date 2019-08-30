@@ -134,5 +134,5 @@ augroup spell_check
 augroup END
 
 " スペルチェックのハイライトを下線部に変更
-hi clear SpellBad
-hi SpellBad cterm=underline
+"hi clear SpellBad
+"hi SpellBad cterm=underline
