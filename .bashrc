@@ -32,3 +32,9 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 #rbenvのパス
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
+
+# pythonのパス(pyenv) pyenvをbrewでインストール
+# brew install pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
