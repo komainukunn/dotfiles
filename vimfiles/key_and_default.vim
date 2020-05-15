@@ -15,10 +15,6 @@ nmap <Space>l :noh<CR>
 "スペルチェック切り替え
 nmap <Space>z :set spell!<CR>
 
-"スニぺット
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
 "NERD Commenteによるコメントアウト
 "コメントアウト
 nmap <Space>// <Plug>NERDCommenterAlignLeft

@@ -213,7 +213,10 @@ let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-# checkerのルール
+" ALEの有効/無効切替をお好みのキーにマップします（※任意です）
+nmap <silent>, <Plug>(ale_toggle)
+
+" checkerのルール
 let g:ale_php_phpcs_standard = 'PSR2'
 
 '''
