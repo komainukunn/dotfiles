@@ -217,6 +217,6 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent>, <Plug>(ale_toggle)
 
 " checkerのルール
-let g:ale_php_phpcs_standard = 'PSR2'
+let g:ale_php_phpcs_standard = 'PSR1'
 
 '''

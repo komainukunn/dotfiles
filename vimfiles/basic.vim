@@ -47,7 +47,7 @@ augroup END
 "日本語入力をリセット
 au BufNewFile,BufRead * set iminsert=0
 "タブ幅をリセット
-au BufNewFile,BufRead * set tabstop=4 shiftwidth=4
+au BufNewFile,BufRead * set tabstop=2 shiftwidth=2
 "バックアップファイル自動作成の停止
 set nobackup
 " カーソルを行頭、行末で止まらないようにする
