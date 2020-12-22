@@ -136,3 +136,6 @@ augroup END
 " スペルチェックのハイライトを下線部に変更
 hi clear SpellBad
 hi SpellBad cterm=underline
+
+" 拡張子と言語を紐つけ
+autocmd BufNewFile,BufRead *.ts  set filetype=javascript
