@@ -31,3 +31,7 @@ nmap <Space>xs <Plug>NERDCommenterSexy
 vmap <Space>xm <Plug>NERDCommenterMinimal
 vmap <Space>xs <Plug>NERDCommenterSexy
 nmap <Space>xa <Plug>NERDCommenterAltDelims
+
+
+nmap <Space>2 :set shiftwidth=2<CR>
+nmap <Space>4 :set shiftwidth=4<CR>

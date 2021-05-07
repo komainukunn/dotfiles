@@ -220,3 +220,14 @@ nmap <silent>, <Plug>(ale_toggle)
 let g:ale_php_phpcs_standard = 'PSR1'
 
 '''
+
+# クイックラン
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# 設定
+hook_add = '''
+set splitbelow
+set splitright
+vmap <Space>p :QuickRun php<CR>
+'''
